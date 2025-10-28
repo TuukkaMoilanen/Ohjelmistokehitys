@@ -55,10 +55,10 @@ int main(void)
 {
 	int ret = init_uart();
 	if (ret != 0) {
-		printk("UART initialization failed!\n");
+		//printk("UART initialization failed!\n");
 		return ret;
 	}
-        printk("System started!\n"); 
+        //printk("System started!\n"); 
 	return 0;
 }
 
@@ -84,7 +84,7 @@ void uart_task(void *unused1, void *unused2, void *unused3)
 				}
 			// Character is newline, copy dispatcher data and put to FIFO buffer
 			} else {
-				printk("UART msg: %s\n", uart_msg);
+				//printk("UART msg: %s\n", uart_msg);
                 
 				struct data_t *buf = k_malloc(sizeof(struct data_t));
 				if (buf == NULL) {
@@ -97,7 +97,7 @@ void uart_task(void *unused1, void *unused2, void *unused3)
 				// You need to:
 				// Put dispatcher data to FIFO buffer
                 k_fifo_put(&dispatcher_fifo, buf);
-                printk("Fifo data: %s\n" ,buf->msg);
+                //printk("Fifo data: %s\n" ,buf->msg);
 
 				// Clear UART receive buffer
 				uart_msg_cnt = 0;
@@ -120,14 +120,14 @@ void dispatcher_task(void *unused1, void *unused2, void *unused3)
 		memcpy(sequence,rec_item->msg,20);
 		k_free(rec_item);
 
-		printk("Dispatcher: %s\n", sequence);
+		//printk("Dispatcher: %s\n", sequence);
 
 		uint64_t seq_start_us = k_ticks_to_us_floor64(k_uptime_ticks());
 
         		// 2. Käy sekvenssi läpi kirjain kerrallaan (esim. "RYG")
 		for (int i = 0; i < strlen(sequence); i++) {
 			char color = sequence[i];
-			printk("Next color: %c\n", color);
+			//printk("Next color: %c\n", color);
 
 			// 3. Lähetä signaali oikealle valotaskille
 			if (color == 'R') {
@@ -162,9 +162,9 @@ void red_task(void *a, void *b, void *c) {
         k_mutex_unlock(&red_mutex);
 
 		uint32_t start = k_cycle_get_32();
-        printk("Red on\n");
+        //printk("Red on\n");
         k_msleep(500); // simulaatio, valon kesto
-        printk("Red off\n");
+        //printk("Red off\n");
 		uint32_t end = k_cycle_get_32();
 
 		uint32_t elapsed_us = k_ticks_to_us_ceil32(end - start);
@@ -182,9 +182,9 @@ void green_task(void *a, void *b, void *c) {
         k_mutex_unlock(&green_mutex);
 
 		uint32_t start = k_cycle_get_32();
-        printk("Green on\n");
+        //printk("Green on\n");
         k_msleep(500);
-        printk("Green off\n");
+        //printk("Green off\n");
 		uint32_t end = k_cycle_get_32();
 
 		uint32_t elapsed_us = k_ticks_to_us_ceil32(end - start);
@@ -202,9 +202,9 @@ void yellow_task(void *a, void *b, void *c) {
         k_mutex_unlock(&yellow_mutex);
 
 		uint32_t start = k_cycle_get_32();
-        printk("Yellow on\n");
+        //printk("Yellow on\n");
         k_msleep(500);
-        printk("Yellow off\n");
+        //printk("Yellow off\n");
 		uint32_t end = k_cycle_get_32();
 
 		uint32_t elapsed_us = k_ticks_to_us_ceil32(end - start);
