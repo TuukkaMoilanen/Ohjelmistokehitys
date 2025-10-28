@@ -122,7 +122,6 @@ void dispatcher_task(void *unused1, void *unused2, void *unused3)
 
 		printk("Dispatcher: %s\n", sequence);
 
-		uint64_t seq_start_us = k_ticks_to_us_floor64(k_uptime_ticks());
 
         		// 2. Käy sekvenssi läpi kirjain kerrallaan (esim. "RYG")
 		for (int i = 0; i < strlen(sequence); i++) {
@@ -147,10 +146,6 @@ void dispatcher_task(void *unused1, void *unused2, void *unused3)
 			// 4. Odota, että valotaski ilmoittaa olevansa valmis
 			k_sem_take(&release_sem, K_FOREVER);
 		}
-		uint64_t seq_end_us = k_ticks_to_us_floor64(k_uptime_ticks());
-		uint64_t seq_duration_us = seq_end_us - seq_start_us;
-
-		printk("Total sequence time: %llu us\n", seq_duration_us);
 	}
 }
 
@@ -161,14 +156,9 @@ void red_task(void *a, void *b, void *c) {
         k_condvar_wait(&red_signal, &red_mutex, K_FOREVER);
         k_mutex_unlock(&red_mutex);
 
-		uint32_t start = k_cycle_get_32();
         printk("Red on\n");
         k_msleep(500); // simulaatio, valon kesto
         printk("Red off\n");
-		uint32_t end = k_cycle_get_32();
-
-		uint32_t elapsed_us = k_ticks_to_us_ceil32(end - start);
-        printk("Red task duration: %u us\n", elapsed_us);
 
         // Ilmoitetaan dispatcherille että tehtävä valmis
         k_sem_give(&release_sem);
@@ -181,15 +171,9 @@ void green_task(void *a, void *b, void *c) {
         k_condvar_wait(&green_signal, &green_mutex, K_FOREVER);
         k_mutex_unlock(&green_mutex);
 
-		uint32_t start = k_cycle_get_32();
         printk("Green on\n");
         k_msleep(500);
         printk("Green off\n");
-		uint32_t end = k_cycle_get_32();
-
-		uint32_t elapsed_us = k_ticks_to_us_ceil32(end - start);
-        printk("Green task duration: %u us\n", elapsed_us);
-
 
         k_sem_give(&release_sem);
     }
@@ -201,14 +185,9 @@ void yellow_task(void *a, void *b, void *c) {
         k_condvar_wait(&yellow_signal, &yellow_mutex, K_FOREVER);
         k_mutex_unlock(&yellow_mutex);
 
-		uint32_t start = k_cycle_get_32();
         printk("Yellow on\n");
         k_msleep(500);
         printk("Yellow off\n");
-		uint32_t end = k_cycle_get_32();
-
-		uint32_t elapsed_us = k_ticks_to_us_ceil32(end - start);
-        printk("Yellow task duration: %u us\n", elapsed_us);
 
         k_sem_give(&release_sem);
     }
