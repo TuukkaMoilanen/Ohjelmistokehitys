@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.10.8 on win32)" generated="2025-11-10T00:17:44.004736" rpa="false" schemaversion="5">
+<suite id="s1" name="Uart Time Test" source="C:\Users\Tuukka\Ohjelmistokehitys-week3\uart_time_test.robot">
+<test id="s1-t1" name="Valid Time -&gt; 80 seconds" line="21">
+<kw name="Send Command And Get Response">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-10T00:17:44.041770" level="INFO">${args} = ['-c', 'import serial,sys; s=serial.Serial(\'COM5\',115200,timeout=2); s.write(b"000120\\r"); print(s.readline().decode().strip()); s.close()']</msg>
+<var>${args}</var>
+<arg>-c</arg>
+<arg>import serial,sys; s=serial.Serial('${PORT}',${BAUD},timeout=2); s.write(b"${cmd}\\r"); print(s.readline().decode().strip()); s.close()</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.041770" elapsed="0.000000"/>
+</kw>
+<kw name="Start Process" owner="Process">
+<msg time="2025-11-10T00:17:44.042770" level="INFO">Starting process:
+python -c "import serial,sys; s=serial.Serial('COM5',115200,timeout=2); s.write(b\"000120\r\"); print(s.readline().decode().strip()); s.close()"</msg>
+<msg time="2025-11-10T00:17:44.047775" level="INFO">${process} = &lt;Popen: returncode: None args: ['python', '-c', 'import serial,sys; s=serial...&gt;</msg>
+<var>${process}</var>
+<arg>python</arg>
+<arg>@{args}</arg>
+<arg>shell=False</arg>
+<arg>stdout=PIPE</arg>
+<arg>stderr=PIPE</arg>
+<doc>Starts a new process on background.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.042770" elapsed="0.005005"/>
+</kw>
+<kw name="Wait For Process" owner="Process">
+<msg time="2025-11-10T00:17:44.047775" level="INFO">Waiting for process to complete.</msg>
+<msg time="2025-11-10T00:17:44.268976" level="INFO">Process completed.</msg>
+<msg time="2025-11-10T00:17:44.268976" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<var>${result}</var>
+<arg>${process}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits for the process to complete or to reach the given timeout.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.047775" elapsed="0.221201"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-10T00:17:44.270977" level="INFO">${output} = RES:80</msg>
+<var>${output}</var>
+<arg>${result.stdout}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.268976" elapsed="0.002001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-10T00:17:44.271978" level="INFO">Got: RES:80</msg>
+<arg>Got: ${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.270977" elapsed="0.001001"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-11-10T00:17:44.271978" elapsed="0.000000"/>
+</return>
+<msg time="2025-11-10T00:17:44.271978" level="INFO">${res} = RES:80</msg>
+<var>${res}</var>
+<arg>000120</arg>
+<status status="PASS" start="2025-11-10T00:17:44.040768" elapsed="0.231210"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${res}</arg>
+<arg>RES:80</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.271978" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-11-10T00:17:44.040768" elapsed="0.231210"/>
+</test>
+<test id="s1-t2" name="Invalid Time -&gt; error code -1" line="25">
+<kw name="Send Command And Get Response">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-11-10T00:17:44.273981" level="INFO">${args} = ['-c', 'import serial,sys; s=serial.Serial(\'COM5\',115200,timeout=2); s.write(b"001067\\r"); print(s.readline().decode().strip()); s.close()']</msg>
+<var>${args}</var>
+<arg>-c</arg>
+<arg>import serial,sys; s=serial.Serial('${PORT}',${BAUD},timeout=2); s.write(b"${cmd}\\r"); print(s.readline().decode().strip()); s.close()</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.272979" elapsed="0.001002"/>
+</kw>
+<kw name="Start Process" owner="Process">
+<msg time="2025-11-10T00:17:44.273981" level="INFO">Starting process:
+python -c "import serial,sys; s=serial.Serial('COM5',115200,timeout=2); s.write(b\"001067\r\"); print(s.readline().decode().strip()); s.close()"</msg>
+<msg time="2025-11-10T00:17:44.278985" level="INFO">${process} = &lt;Popen: returncode: None args: ['python', '-c', 'import serial,sys; s=serial...&gt;</msg>
+<var>${process}</var>
+<arg>python</arg>
+<arg>@{args}</arg>
+<arg>shell=False</arg>
+<arg>stdout=PIPE</arg>
+<arg>stderr=PIPE</arg>
+<doc>Starts a new process on background.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.273981" elapsed="0.005004"/>
+</kw>
+<kw name="Wait For Process" owner="Process">
+<msg time="2025-11-10T00:17:44.278985" level="INFO">Waiting for process to complete.</msg>
+<msg time="2025-11-10T00:17:44.488175" level="INFO">Process completed.</msg>
+<msg time="2025-11-10T00:17:44.488175" level="INFO">${result} = &lt;result object with rc 0&gt;</msg>
+<var>${result}</var>
+<arg>${process}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits for the process to complete or to reach the given timeout.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.278985" elapsed="0.209190"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-11-10T00:17:44.490177" level="INFO">${output} = RES:-2</msg>
+<var>${output}</var>
+<arg>${result.stdout}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.488175" elapsed="0.002002"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-11-10T00:17:44.490177" level="INFO">Got: RES:-2</msg>
+<arg>Got: ${output}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-11-10T00:17:44.490177" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${output}</value>
+<status status="PASS" start="2025-11-10T00:17:44.490177" elapsed="0.000000"/>
+</return>
+<msg time="2025-11-10T00:17:44.490177" level="INFO">${res} = RES:-2</msg>
+<var>${res}</var>
+<arg>001067</arg>
+<status status="PASS" start="2025-11-10T00:17:44.272979" elapsed="0.217198"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2025-11-10T00:17:44.490177" level="FAIL">'RES:-2' does not contain 'RES:-1'</msg>
+<arg>${res}</arg>
+<arg>RES:-1</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2025-11-10T00:17:44.490177" elapsed="0.001001">'RES:-2' does not contain 'RES:-1'</status>
+</kw>
+<status status="FAIL" start="2025-11-10T00:17:44.272979" elapsed="0.218199">'RES:-2' does not contain 'RES:-1'</status>
+</test>
+<status status="FAIL" start="2025-11-10T00:17:44.006738" elapsed="0.484440"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Uart Time Test" id="s1" pass="1" fail="1" skip="0">Uart Time Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -91,7 +91,7 @@ void uart_task(void *unused1, void *unused2, void *unused3)
                 // Jos pituus on 6 merkkiä, parsitaan aika
                 if (strlen(uart_msg) == 6) {
                     int delay_s = time_parse(uart_msg);
-
+                    printk("RES:%d\n", delay_s);
                     if (delay_s >= 0) {
                         printk("Valid time: %s -> %d s\n", uart_msg, delay_s);
                         k_timer_start(&time_trigger, K_SECONDS(delay_s), K_NO_WAIT);
