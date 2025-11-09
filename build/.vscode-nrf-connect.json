@@ -1,0 +1,19 @@
+{
+  "toolchainPath": "c:\\ncs\\toolchains\\b8b84efebd",
+  "sdkPath": "c:\\ncs\\v3.1.0",
+  "board": "nrf5340dk/nrf5340/cpuapp",
+  "boardDir": "c:\\ncs\\v3.1.0\\zephyr\\boards\\nordic\\nrf5340dk",
+  "boardDirs": [
+    "c:\\ncs\\v3.1.0\\zephyr\\boards\\nordic\\nrf5340dk"
+  ],
+  "optimizations": "none",
+  "cmakeArgs": [],
+  "confFiles": [
+    "prj.conf"
+  ],
+  "buildDirectory": "build",
+  "kconfigFragments": [],
+  "snippets": [],
+  "dtcOverlays": [],
+  "extraDtcOverlays": []
+}

@@ -1,0 +1,13 @@
+# Target labels
+ Ohjelmistokehitys-week3
+# Source files and their labels
+C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/CMakeFiles/Ohjelmistokehitys-week3
+C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/CMakeFiles/Ohjelmistokehitys-week3.rule
+C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/CMakeFiles/Ohjelmistokehitys-week3-complete.rule
+C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-build.rule
+C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-configure.rule
+C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-download.rule
+C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-install.rule
+C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-mkdir.rule
+C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-patch.rule
+C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-update.rule

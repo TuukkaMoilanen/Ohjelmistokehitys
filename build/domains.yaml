@@ -1,0 +1,7 @@
+default: Ohjelmistokehitys-week3
+build_dir: C:/Users/Tuukka/Ohjelmistokehitys-week3/build
+domains:
+  - name: Ohjelmistokehitys-week3
+    build_dir: C:/Users/Tuukka/Ohjelmistokehitys-week3/build/Ohjelmistokehitys-week3
+flash_order:
+  - Ohjelmistokehitys-week3

@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/CMakeFiles/Ohjelmistokehitys-week3"
+		},
+		{
+			"file" : "C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/CMakeFiles/Ohjelmistokehitys-week3.rule"
+		},
+		{
+			"file" : "C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/CMakeFiles/Ohjelmistokehitys-week3-complete.rule"
+		},
+		{
+			"file" : "C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-build.rule"
+		},
+		{
+			"file" : "C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-download.rule"
+		},
+		{
+			"file" : "C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-install.rule"
+		},
+		{
+			"file" : "C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Tuukka/Ohjelmistokehitys-week3/build/_sysbuild/sysbuild/images/Ohjelmistokehitys-week3-prefix/src/Ohjelmistokehitys-week3-stamp/Ohjelmistokehitys-week3-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Ohjelmistokehitys-week3"
+		],
+		"name" : "Ohjelmistokehitys-week3"
+	}
+}
